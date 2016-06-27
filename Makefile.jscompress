@@ -1,0 +1,14 @@
+FILE=jsfiles
+COMPRESSOR=yuicompressor-2.4.7.jar
+SOURCE:=$(shell cat $(FILE))
+TARGET:=$(shell for f in $(SOURCE); do echo $$f | sed 's/js\/\(.*\).js/js-min\/\1.min.js/'; done)
+
+all:$(TARGET) data/system/networkInfo.min.js
+$(TARGET): js-min/%.min.js: js/%.js
+	java -jar $(COMPRESSOR) $< -o $@
+
+#data/trackInfo.min.js:data/trackInfo.js
+#	java -jar $(COMPRESSOR) $< -o $@
+
+data/system/networkInfo.min.js:data/system/networkInfo.js
+	java -jar $(COMPRESSOR) $< -o $@

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>NetGestalt - Gene Network Browser</title>
+<script>
+// preloading 
+pic1= new Image(400,60); 
+pic1.src="images/loading_netgestalt.png";
+ if(navigator.userAgent.toLowerCase().indexOf('specialagent')==-1){
+	 var loading_ng=document.createElement("div");
+	 loading_ng.setAttribute("id","loading_netgestalt");
+ }
+</script>
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" media="all" >
+<link rel="stylesheet" type="text/css" href="css/netgestalt.css">
+<link rel="stylesheet" type="text/css" href="css/topmenu.css">
+<link rel="stylesheet" type="text/css" href="css/chosen.css">
+<link rel="stylesheet" type="text/css" href="css/querybox.css">
+<link rel="stylesheet" type="text/css" href="js/TinyTable/style.css">
+<link rel="stylesheet" type="text/css" href="css/dhtmlxtree.css">
+<link rel="stylesheet" type="text/css" href="css/contextmenu.css">
+<link rel="stylesheet" type="text/css" href="css/jquery.autocomplete.css">
+<link rel="stylesheet" type="text/css" href="css/dropmenu.css">
+<link rel="stylesheet" type="text/css" href="css/formalize.css">
+<link rel="stylesheet" type="text/css" href="css/flexigrid.pack.css">
+<style type="text/css">
+ html, body { height: 100%; width: 100%; padding: 0; border: 0; }
+</style>
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script src="http://code.jquery.com/ui/1.10.2/jquery-ui.min.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+/*
+ if(navigator.userAgent.toLowerCase().indexOf('specialagent')==-1){
+   $("body").append($("<div>").attr("id","loading_netgestalt")); 
+ }
+ */
+function processOrganism(){
+   var parameters=location.search.substring(1).split("&");
+   var temp=parameters[0].split("=");
+   var org=unescape(temp[1]);
+   return org;
+ }
+ document.body.appendChild(loading_ng);
+</script>
+<script type="text/javascript" src="js/balloon/balloon.config.js"></script>
+<script type="text/javascript" src="js/balloon/balloon.js"></script>
+<script type="text/javascript" src="js/balloon/box.js"></script>
+<script type="text/javascript" src="js/jquery.declare-1.0.js"></script>
+<script type="text/javascript" src="js/MyTrack.js"></script>
+<script type="text/javascript" src="js/Util.js"></script>
+<script type="text/javascript" src="js/TrackView.js"></script>
+<script type="text/javascript" src="js/NGBrowser.js"></script>
+<script type="text/javascript" src="js/UITracks.js"></script>
+<script type="text/javascript" src="data/system/networkInfo.js"></script>
+<script type="text/javascript" src="js/QueryBox.js"></script>
+<script type="text/javascript" src="js/GeneInputBox.js"></script>
+<script type="text/javascript" src="js/SimpleTrack.js"></script>
+<script type="text/javascript" src="js/CompositeTrack.js"></script>
+<script type="text/javascript" src="js/NameTrack.js"></script>
+<script type="text/javascript" src="js/jquery.cookie.js"></script>
+<script type="text/javascript" src="js/jquery.layout.min.js"></script>
+<script type="text/javascript" src="js/jquery.formalize.min.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+ var balloon17394             = new Balloon;
+   balloon17394.padding         = 10;
+   balloon17394.shadow          = 0;
+   balloon17394.stemHeight      = 20;
+   balloon17394.stemOverlap     = 1;
+   balloon17394.stem            = true;
+   balloon17394.fontColor       = 'black';
+   balloon17394.fontFamily      = 'Arial, sans-serif';
+   balloon17394.fontSize        = '9pt';
+   balloon17394.images          = 'images/balloon17394';
+   balloon17394.balloonImage    = 'balloon.png';
+   balloon17394.upLeftStem      = 'up_left.png';
+   balloon17394.upRightStem     = 'up_right.png';
+   balloon17394.downLeftStem    = 'down_left.png';
+   balloon17394.downRightStem   = 'down_right.png';
+   balloon17394.closeButton     = 'close.png';
+   balloon17394.ieImage         = null;
+   balloon17394.configured      = true;
+   balloon17394.displayTime     = 3000;
+//   balloon17394.fadeIn          = 1000;
+//   balloon17394.allowFade       = true;
+//  balloon17394.fadeOut          = 1000;
+
+  var box17395 = new Box;
+  BalloonConfig(box17395,'GBox');
+  box17395.fontColor       = 'black';
+  box17395.opacity         = 1;
+  box17395.fontFamily      = 'Arial, sans-serif';
+  box17395.fontSize        = '9pt';
+  box17395.images          = 'images/balloon17394';
+  box17395.ieImage         = null;
+  box17395.closeButton     = 'close.png'
+  box17395.borderStyle     = '1px solid gray';
+  box17395.allowEventHandlers = true;
+  box17395.allowScripts    = true;
+
+   var debug=false;
+   var debug1=false;
+   var debug2=false;
+   var debug3=false;
+   var debug4=false;
+   var debug5=false;
+   var debug6=false;
+   var screenshot=true;
+
+	 if(!window.localStorage) {
+      alert('Your version of browser is not supported! Please upgrade to the latest version.');
+	 } else {
+		 //ngDocRoot: path to NetGestalt root relative to web server's doc root
+     var orgnsm=processOrganism();
+		 var ng_logo=new Logo({browserContainerID: "NGBrowser", containerID:"logo", organism:orgnsm, ngDocRoot:"/$NG_DOC_ROOT", allNetworks: allNetworks, networkInfo: networkInfo, onload:true});
+		 var b;
+		 window.onload=function(){
+			 $("#loading_netgestalt").fadeOut("slow");
+		 };
+	 }
+/*  ]]>  */
+</script>
+<div id="logo" style="position:relative;">
+</div>
+<div id="NGBrowser"></div>
+<script type="text/javascript" src="js/balloon/yahoo-dom-event.js"></script>
+<script type="text/javascript" src="js/jquery.autocomplete.js"></script>
+<script type="text/javascript" src="js/flexigrid.js"></script>
+<script type="text/javascript" src="js/jquery.form.js"></script>
+<script type="text/javascript" src="js/cytoscapeweb/js/src/json2.js"></script>                            
+<script type="text/javascript" src="js/cytoscapeweb/js/src/AC_OETags.js"></script>
+<script type="text/javascript" src="js/cytoscapeweb/js/src/cytoscapeweb.js"></script>
+<script type="text/javascript" src="js/TinyTable/script.js"></script>
+<script type="text/javascript" src="js/raphael-min.js"></script>
+<script type="text/javascript" src="js/dhtmlxcommon.js"></script>
+<script type="text/javascript" src="js/dhtmlxtree.js"></script>
+<script type="text/javascript" src="js/dhtmlxtree_json.js"></script>
+<script type="text/javascript" src="js/chosen.jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.contextmenu.js"></script>
+<script type="text/javascript" src="js/TrackView_UI.js"></script>
+<script type="text/javascript" src="js/NGBrowser_UI.js"></script>
+<script type="text/javascript" src="js/idTypes.js"></script>
+</body>        
+</html>

@@ -1,0 +1,20 @@
+Barcode	Tissue	Location	Size
+data_type	CAT	CAT	CON
+GSM215051	normal	descending colon	0.2
+GSM215052	normal	sigmoid colon	0.2
+GSM215053	normal	sigmoid colon	0.2
+GSM215054	normal	sigmoid colon	0.2
+GSM215055	normal	sigmoid colon	0.2
+GSM215056	normal	sigmoid colon	0.2
+GSM215057	normal	transversum	0.2
+GSM215058	normal	rectum	0.2
+GSM215059	normal	rectum	0.2
+GSM215106	adenoma	sigmoid colon	3
+GSM215107	adenoma	sigmoid colon	3
+GSM215108	adenoma	ascending colon	3
+GSM215109	adenoma	sigmoid colon	1
+GSM215110	adenoma	rectum	3.5
+GSM215111	adenoma	sigmoid colon	1
+GSM215112	adenoma	sigmoid colon	3
+GSM215113	adenoma	ascending colon	2
+GSM215114	adenoma	sigmoid colon	1.5

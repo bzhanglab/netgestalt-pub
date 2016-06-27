@@ -1,0 +1,86 @@
+body {
+	font: 12px Arial,Helvetica,sans-serif;
+	margin:0px;
+}
+
+#logodiv{
+ position:absolute;
+ padding-left:10px;
+ padding-bottom:10px;
+ top:10px;
+ background-color:white;
+ border-bottom:solid 5px #8CC63F;
+ left:0px;
+ z-index:1000;
+}
+
+#buttons{
+  position: absolute;
+	top:60px;
+	height:20px;
+	left:250px;
+	width:200px;
+	z-index:2000;
+}
+
+#leftpane{
+  position: absolute;
+	top:100px;
+	width:250px;
+}
+
+#cp_container{
+  position: absolute; 
+  top: 100px;
+  overflow: hidden;
+}
+
+#collapsed_name{
+  position: relative; 
+  left: 0px;
+  top: 0px; 
+  height: 100%;
+  background-color:white;
+  z-index:50;
+}
+
+.cp-gene-name{
+  float:left;                                                                                                                 
+  border-style: none none none solid;
+  border-width: 1px; 
+  border-color: #ddd; 
+}
+
+.cp-gene-name-text{
+  display:inline-block;
+  font-family:"Courier New", Courier,monospace;
+  font-size:12px;
+  letter-spacing:0px;
+}
+
+.togglediv{
+  position:absolute;
+	width: 150px;
+	height: 20px;
+  font-size:12px;
+	color:#A67C52;
+	cursor:pointer;
+}
+
+div.track-label{
+ cursor: auto;
+}
+
+/*
+.collapsible {
+	margin-bottom: 20px;
+	background: #EBEBEB;
+	border: 1px solid #CCCCCC;
+	padding: 10px;
+	width: 500px;
+	font: 12px Arial, Helvetica, sans-serif;
+	color: #333333;
+	display: block;
+	overflow: hidden;
+}
+*/

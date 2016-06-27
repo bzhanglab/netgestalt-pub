@@ -1,0 +1,249 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>NetGestalt</title>
+
+  <!-- include the Tools -->
+  <!--<script type="text/javascript" src="jquery.tools.min.js"></script>-->
+  <!-- standalone page styling (can be removed) -->
+  <!-- tab styling -->
+	<link rel="shortcut icon" href="favicon.ico">
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+  <link rel="stylesheet" type="text/css" href="css/global.css">
+  <link rel="stylesheet" type="text/css" href="css/responsiveslides.css">
+  <link rel="stylesheet" type="text/css" href="css/responsiveslides-themes.css">
+  <link rel="stylesheet" type="text/css" href="css/chosen.css">
+<!--  <link rel="stylesheet" href="css/jquery.fancybox.css" type="text/css" media="screen" /> -->
+  <style>
+  /* override the root element to enable scrolling */
+  body{
+    min-width:800px;
+    height:100%;
+    padding:0px;
+    background-color:#fff;
+  }
+  #wrapper{
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    border-radius:0px;
+    background-color:white;
+    margin:0px 0px 0px 0px;
+    height: auto; 
+    min-height: 100%;
+    text-align: center;
+    border-style:solid; 
+    border-width:0px;
+    border-color:#88c353;
+  }                
+	/*
+  .buttons{
+    margin:30px auto;
+  }
+	*/
+
+  .slideTogglebox{
+    padding:8px;
+    margin:16px 16px 0px 16px;
+    width:600px;
+    height:100px;
+    background-color:#FFF;
+    color:white;
+    display:none;
+  }
+  .slideTogglebox a span.play { display:block; background: url('images/play-arrow.png') center center no-repeat; margin: -70px 10px 0 0; height: 60px; position: relative; z-index: 100; opacity: 0.5; }   
+  .slideTogglebox a:hover  span.play { display:block; background: url('images/play-arrow.png') center center no-repeat; margin: -70px 10px 0 0; height: 60px; position: relative; z-index: 100; opacity: 0.9; }   
+  .clear{
+    clear:both;
+  }
+
+  .title{
+   color:black;   
+  }
+
+	#choose-portal .chosen-container{
+	  text-align:left;
+	}
+	#choose-portal .chosen-container .chosen-results li.highlighted{
+		background: #A67c52;
+		color: #fff
+	}
+  </style>
+
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="js/responsiveslides.min.js"></script>
+<script src="js/chosen.jquery.min.js"></script>
+ <script>
+  $(function(){
+      $("#slider1").responsiveSlides({
+        auto: true,
+        pager: true,
+        nav: true,
+        speed: 500,
+        maxwidth: 800,
+        namespace: "centered-btns"
+      });
+$("#slideToggle").click(function () {
+   $('.slideTogglebox').slideToggle();
+});
+$(".chzn-select").chosen({
+  disable_search_threshold: 10,
+	width:"300px"}
+ );
+ /*
+$('#enterbuttonimg').hover(function(){
+	$(this).off("click");
+  if($("#ng-portals").val()==""){
+		return;
+	}
+  $(this).attr('src', 'images/button-enter-green.png');
+	$(this).css( 'cursor', 'pointer' );
+	$(this).click(function(){
+	   window.location=$("#ng-portals").val()+"/main.html";
+	  });
+	}, function(){
+	  $(this).attr('src', 'images/button-enter-brown.png');
+});
+*/
+$("#ng-portals").change(function() {
+	var org=this.options[this.selectedIndex].getAttribute('organism');
+  window.location=$("#ng-portals").val()+"/main.html?organism="+org;
+});
+});
+</script>
+
+</head>
+<body>
+<div id="wrapper" align="center">
+<div id="logo"><img src="images/logo2.png" alt="netgestalt" width="350" /></div>
+<!--<div id="logo"><img src="images/logo2.png" alt="netgestalt" width="457" height="136" /></div>-->
+<!-- tabs work as navigator for scrollable -->
+<div style="margin-top:20px" align="center">
+
+<div class="rslides_container">
+      <ul class="rslides" id="slider1">
+        <li><img src="cover_introductions/Slide1.png" alt=""></li>
+        <li><img src="cover_introductions/Slide2.png" alt=""></li>
+        <li><img src="cover_introductions/Slide3.png" alt=""></li>
+        <li><img src="cover_introductions/Slide4.png" alt=""></li>
+        <li><img src="cover_introductions/Slide5.png" alt=""></li>
+        <li><img src="cover_introductions/Slide6.png" alt=""></li>
+      </ul>
+<div id="slideToggle" align="center">Video Tutorials</div>                                        
+<div class="slideTogglebox">
+    <div style="float: left; width: 150px;">
+<!--<a class="video fancybox.iframe" href="https://www.youtube.com/watch?v=_1a7fY5OSH4"><img width="100" src="images/video_thumbnails/netgestalt_01.jpg"/> -->
+<a target="_blank" href="https://www.youtube.com/watch?v=_1a7fY5OSH4"><img width="100" src="images/video_thumbnails/netgestalt_01.jpg"/>
+<span class="play"></span>
+</a>
+    </div>
+ <div style="float: left; width: 150px;">
+  <a target="_blank" href="https://www.youtube.com/watch?v=3F1CH3AaVmY"><img width="100" src="images/video_thumbnails/netgestalt_02.jpg"/>
+<span class="play"></span>
+</a>
+   
+</div>
+ <div style="float: left; width: 150px;">
+  <a target="_blank" href="https://www.youtube.com/watch?v=0OSiI-o-SFY"><img width="100" src="images/video_thumbnails/netgestalt_03.jpg"/>
+<span class="play"></span>
+</a>
+</div>
+ <div style="float: left; width: 150px;">
+  <a target="_blank" href="https://www.youtube.com/watch?v=T_DnDHQNtrQ"><img width="100" src="images/video_thumbnails/netgestalt_04.jpg"/>
+<span class="play"></span>
+</a>
+</div>
+ <br style="clear: left;" />
+   <div class="title" style="float: left; margin-top:10px;width: 150px;">What is NetGestalt</div>
+   <div class="title" style="float: left; margin-top:10px;width: 150px;">Introduction to The Interface</div>
+   <div class="title" style="float: left; margin-top:10px;width: 150px;">Track Types</div>
+   <div class="title" style="float: left; margin-top:10px;width: 150px;">Navigating NetGestalt</div>
+  </div>
+
+ <div class="slideTogglebox">
+    <div style="float: left; width: 150px;">
+     <a target="_blank" href="https://www.youtube.com/watch?v=qAUi0ls6Wsg"><img width="100" src="images/video_thumbnails/netgestalt_05.jpg"/>
+     <span class="play"></span>
+     </a>
+    </div>
+ <div style="float: left; width: 150px;">
+  <a target="_blank" href="https://www.youtube.com/watch?v=eyxvTQqmz7M"><img width="100" src="images/video_thumbnails/netgestalt_06.jpg"/>
+     <span class="play"></span>
+   </a>
+</div>
+ <div style="float: left; width: 150px;">
+ <a target="_blank" href="https://www.youtube.com/watch?v=3sXCICkebrY"><img width="100" src="images/video_thumbnails/netgestalt_07.jpg"/>
+<span class="play"></span>
+</a>
+</div>
+<div style="float: left; width: 150px;">
+ <a target="_blank" href="https://www.youtube.com/watch?v=IV5VxdJpGfk"><img width="100" src="images/video_thumbnails/netgestalt_08.jpg"/>
+<span class="play"></span>
+</a>
+</div>
+ <br style="clear: left;" />
+   <div class="title" style="float: left; margin-top:10px;width: 150px;">Single Track Analysis Methods (1)</div>
+   <div class="title" style="float: left; margin-top:10px;width: 150px;">Single Track Analysis Methods (2)</div>
+   <div class="title" style="float: left; margin-top:10px;width: 150px;">Multi-Track Analysis Methods</div>
+   <div class="title" style="float: left; margin-top:10px;width: 150px;">Putting It All Together</div>
+</div>
+ <div class="slideTogglebox">
+ <div style="float: left; width: 150px;">
+  <a target="_blank" href="https://www.youtube.com/watch?v=RxfoN-UJlUY"><img width="100" src="images/video_thumbnails/netgestalt_09.jpg"/>
+     <span class="play"></span>
+   </a>
+</div>
+ <br style="clear: left;" />
+   <div class="title" style="float: left; margin-top:10px;width: 150px;">CRC portal - mutations</div>
+</div>
+</div>
+
+
+<p style="font-weight:bold;font-size:14px;font-family:Arial,Sans-serif">Please select a portal to enter:</p>
+<div id="choose-portal" style="margin-top:10px;margin-bottom:80px;">
+<select class="chzn-select" name="ng-portals" id="ng-portals" data-placeholder="Select a portal ......">
+<option value=""></option>
+<!--
+hsapiens, mmusculus, rnorvegicus, drerio, celegans, scerevisiae, cfamiliaris, dmelanogaster
+Human, mouse, rat, zebra fish, worm, yeast, dog, fruit fly
+-->
+<option value="main" organism="hsapiens">Human:General</option>
+<option value="crc" organism="hsapiens">Human:Colorectal Cancer Portal</option>
+</select>
+</div>
+<!--
+<div id='enterbutton' style='margin:50px auto'><img id='enterbuttonimg' src='images/button-enter-brown.png' name='buttonMain' border=0  alt='main' width='75'></div>
+<div id="supported">Currently supports the latest versions of:
+<p><img src="images/chrome_icon.png" width="30" height="30" alt="google chrome" /><img src="images/firefox_icon.png" w
+idth="30" height="30" alt="Firefox" /><img src="images/safari_icon.jpg" width="30" height="30" alt="Safari" /> </p></d
+iv>
+-->
+<!--<img src="images/ie_icon.jpg" width="30" height="30" alt="IE" />-->
+<!-- AddThis Button BEGIN -->
+<!--
+<div style="align:center; width:250px; margin:0 auto">
+<div style="float:left" class="addthis_toolbox addthis_default_style">
+<a class="addthis_button_facebook"></a>
+<a class="addthis_button_twitter"></a>
+<a class="addthis_button_email"></a>
+<a class="addthis_button_gmail"></a>
+<a class="addthis_button_linkedin"></a>
+<a class="addthis_button_print"></a>
+</div>
+<div id="twitter-follow" style="margin-left:150px"> 
+<a href="https://twitter.com/NetGestalt" class="twitter-follow-button" data-show-count="false">Follow @NetGestalt</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+</div>
+</div>
+<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=xa-4f8af12a4b760898"></script>
+-->
+<!-- AddThis Button END -->
+<div id="footer" style="margin-top:30px">Copyright &copy; <script>document.write(new Date().getFullYear())</script><a href="http://bioinfo.vanderbilt.edu/zhanglab" target="_blank"> Zhang Lab</a> @ Vanderbilt University. All rights reserved.</div>
+</div>
+<div style="font-size:11px;margin-top:5px">
+<b>Funding credits</b>:NCI/CPTAC (Leidos 13XS029; U24 CA159988); NIGMS (R01 GM088822); NIMH (P50 MH096972)
+</div>
+</body>
+
+</html>
+

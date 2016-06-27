@@ -1,0 +1,295 @@
+<!doctype html>
+<head>
+<title>NetGestalt</title>
+<link rel="stylesheet" type="text/css" href="css/main.css">
+<link rel="stylesheet" type="text/css" href="css/global.css">
+<link rel="stylesheet" type="text/css" href="css/chosen.css">
+<link rel="stylesheet" href="css/jquery.fancybox.css" type="text/css" media="screen" />
+<style>
+  /* override the root element to enable scrolling */
+  body{
+    min-width:800px;
+    height:100%;
+    padding:0px;
+    background-color:#fff;
+  }
+  #wrapper{
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    border-radius:0px;
+    background-color:white;
+    margin:0px 0px 0px 0px;
+    height: auto; 
+    min-height: 100%;
+    text-align: center;
+    border-style:solid; 
+    border-width:0px;
+    border-color:#88c353;
+  }                
+  .buttons{
+    margin-top:20px;
+    margin-bottom:30px;
+  }
+
+  #flowpanes {
+    margin:auto;
+    position:relative;
+    overflow:hidden;
+    clear:both;
+  }
+
+  #flowtabs{
+    margin-top:30px;
+  }
+
+  /* override single pane */
+  #flowpanes div {
+    float:left;
+    display:block;
+    width:670px;
+    font-size:14px;
+  }
+
+  /* our additional wrapper element for the items */
+  #flowpanes .items {
+    width:20000em;
+    position:absolute;
+    clear:both;
+    margin:0;
+    padding:0;
+  }
+
+  #flowpanes .less, #flowpanes .less a {
+    color:#999 !important;
+    font-size:11px;
+  }
+
+  .slideTogglebox{
+    padding:8px;
+    margin:16px;
+    width:600px;
+    height:100px;
+    background-color:#FFF;
+    color:white;
+    display:none;
+  }
+  .slideTogglebox a span.play { display:block; background: url('images/play-arrow.png') center center no-repeat; margin: -80px 10px 0 0; height: 80px; position: relative; z-index: 100; opacity: 0.5; }   
+  .slideTogglebox a:hover  span.play { display:block; background: url('images/play-arrow.png') center center no-repeat; margin: -80px 10px 0 0; height: 80px; position: relative; z-index: 100; opacity: 0.9; }   
+  .clear{
+    clear:both;
+  }
+
+  .title{
+   color:black;   
+  }
+  </style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/chosen.jquery.min.js"></script>
+<!-- <script type="text/javascript" src="js/jquery.fancybox.pack.js"></script> -->
+<script src="js/slides.min.jquery.js"></script>
+<script>
+    $(function(){
+      // Set starting slide to 1
+      var startSlide = 1;
+      // Get slide number if it exists
+      if (window.location.hash) {
+        startSlide = window.location.hash.replace('#','');
+      }
+      // Initialize Slides
+      $('#slides').slides({
+        preload: true,
+        preloadImage: 'images/loading.gif',
+        generatePagination: true,
+        play: 15000,
+        pause: 15000,
+        hoverPause: true,
+        // Get the starting slide
+        start: startSlide,
+        animationComplete: function(current){
+          // Set the slide number as a hash
+          window.location.hash = '#' + current;
+        }
+      });
+ });
+$(document).ready(function() {
+/*
+  $(".video").fancybox({
+    maxWidth  : 800,
+    maxHeight : 600,
+    fitToView : false,
+    width   : '70%',
+    height    : '70%',
+    autoSize  : false,
+    closeClick  : false,
+    openEffect  : 'none',
+    closeEffect : 'none',
+    closeBtn : 'true'
+  });
+	*/
+
+$(".chosen").chosen();
+$(".chosen").on('change', function(evt, params) {
+	if(params.selected!="Select a portal..."){
+   	window.location=params.selected+"/main.html";
+	}
+});
+
+$("#slideToggle").click(function () {
+   $('.slideTogglebox').slideToggle();
+});
+});
+</script> 
+</head>
+<body>
+<div id="wrapper" align="center">
+<div id="logo"><img src="images/logo2.png" alt="netgestalt" width="350" /></div>
+<!--<div id="logo"><img src="images/logo2.png" alt="netgestalt" width="457" height="136" /></div>-->
+<!-- tabs work as navigator for scrollable -->
+<div style="margin-top:20px" align="center">
+<div id="container">
+    <div id="example">
+      <div id="slides">
+        <div class="slides_container">
+          <div class="slide">
+           <img src="cover_introductions/Slide1.png" width="600" />
+          </div>
+          <div class="slide">
+           <img src="cover_introductions/Slide2.png" width="600" />
+          </div>
+          <div class="slide">
+           <img src="cover_introductions/Slide3.png" width="600" />
+          </div>
+          <div class="slide">
+           <img src="cover_introductions/Slide4.png" width="600" />
+          </div>
+          <div class="slide">
+             <img src="cover_introductions/Slide5.png" width="600" />
+          </div>
+        </div>
+        <a href="#" class="prev"><img src="images/arrow-prev.png" width="24" height="43" alt="Arrow Prev"></a>
+        <a href="#" class="next"><img src="images/arrow-next.png" width="24" height="43" alt="Arrow Next"></a>
+      </div>
+      <!--<img src="images/example-frame.png" width="739" height="341" alt="Example Frame" id="frame">-->
+      <img src="images/example-frame.png" width="800" height="500" alt="Example Frame" id="frame">
+    </div>
+</div>
+
+<div id=slideToggle style="display:block">Video Tutorials</div>                                        
+  <div class="slideTogglebox">
+    <div style="float: left; width: 200px;">
+     <a class="video fancybox.iframe" href="http://www.youtube.com/embed/A42AybbdbqI"><img width="150" alt="1" src="images/video_thumbnails/netgestalt_01_introduction_small.png"/>
+     <span class="play"></span>
+     </a>
+    </div>
+ <div style="float: left; width: 200px;">
+  <a class="video fancybox.iframe" href="http://www.youtube.com/embed/pyvfOtR_Pvs"><img width="150" src="images/video_thumbnails/netgestalt_02_addTracks_small.png"/>
+     <span class="play"></span>
+     </a>
+   
+</div>
+ <div style="float: left; width: 200px;">
+  <a class="video fancybox.iframe" href="http://www.youtube.com/embed/v5J0dw_aImM"><img width="150" src="images/video_thumbnails/netgestalt_03_trackTypes_small.png"/>
+     <span class="play"></span>
+   </a>
+</div>
+ <br style="clear: left;" />
+   <div class="title" style="float: left; width: 200px;">Introduction</div>
+   <div class="title" style="float: left; width: 200px;">Adding tracks</div>
+   <div class="title" style="float: left; width: 200px;">Track types</div>
+  </div>
+
+  <div class="slideTogglebox">
+    <div style="float: left; width: 200px;">
+     <a class="video fancybox.iframe" href=" http://www.youtube.com/embed/qpte7vtdJHE"> <img width="150" src="images/video_thumbnails/netgestalt_04_layoutAndFeatures_small.png"/>
+     <span class="play"></span>
+     </a>
+    </div>
+ <div style="float: left; width: 200px;">
+  <a class="video fancybox.iframe" href="http://www.youtube.com/embed/sbPJ2O9L6e0 "><img width="150" src="images/video_thumbnails/netgestalt_05_analysis1-3_small.png"/>
+     <span class="play"></span>
+   </a>
+</div>
+ <div style="float: left; width: 200px;">
+ <a class="video fancybox.iframe" href="http://www.youtube.com/embed/ja_WIuZGz8w"><img width="150" src="images/video_thumbnails/netgestalt_06_analysis4-6_small.png"/>
+     <span class="play"></span>
+   </a>
+</div>
+ <br style="clear: left;" />
+   <div class="title" style="float: left; width: 200px;">Layout and features</div>
+   <div class="title" style="float: left; width: 200px;">Analysis: part 1</div>
+   <div class="title" style="float: left; width: 200px;">Analysis: part 2</div>
+  </div>
+
+<!--
+<script type="text/javascript">
+if (/MSIE (\d+\.\d+);/.test(navigator.userAgent)){ //test for MSIE x.x;
+   var ieversion=new Number(RegExp.$1) // capture x.x portion and store as a number
+   if(ieversion<9){
+    document.write("<div style='margin-bottom:10px'><img src='images/ie_not_supported.png' alt='ie_notice' width='550'/> </div>");
+   }
+   else{
+    /* document.write("<br><br><br><br><img src='images/comingsoon.png' width='250px'></img><br><br><br><br><br>"); */
+    document.write("<div class='buttons' align='center'><a href='main/main.html' onMouseOver=\"document.buttonMain.src='images/button-enter-green.png';\" onMouseOut=\"document.buttonMain.src='images/button-enter-brown.png'\"><img src='images/button-enter-brown.png' name='buttonMain' border=0  alt='main' width='90' /></a></div>");
+    document.write("<div id='ie'><img src='images/ie_notice.png' alt='ie_notice' width='550'/></div>");
+   }
+}
+else{
+//    document.write("<div class='buttons' align='center'><a href='main/main.html' onMouseOver=\"document.buttonMain.src='images/button-enter-green.png';\" onMouseOut=\"document.buttonMain.src='images/button-enter-brown.png'\"><img src='images/button-enter-brown.png' name='buttonMain' border=0  alt='main' width='90' /></a></div>");
+}
+</script>
+-->
+<select class="chosen" style="width:150px;">
+<option>Select a portal...</option>
+<option>main</option>
+<option>ayers</option>
+<option>cptac</option>
+<option>tcga</option>
+</select>
+<!--
+<div id="portals">
+<a href="#" data-dropdown="#portals-dropdown">Select a portal...</a>
+</div>
+-->
+
+<!--
+<div id="supported">Currently supports the latest versions of:
+<p><img src="images/chrome_icon.png" width="30" height="30" alt="google chrome" /><img src="images/firefox_icon.png" w
+idth="30" height="30" alt="Firefox" /><img src="images/safari_icon.jpg" width="30" height="30" alt="Safari" /> </p></d
+iv>
+-->
+<!--<img src="images/ie_icon.jpg" width="30" height="30" alt="IE" />-->
+<!-- AddThis Button BEGIN -->
+<div style="align:center; width:250px; margin:100px auto 20px auto">
+<div style="float:left" class="addthis_toolbox addthis_default_style">
+<a class="addthis_button_facebook"></a>
+<a class="addthis_button_twitter"></a>
+<a class="addthis_button_email"></a>
+<a class="addthis_button_gmail"></a>
+<a class="addthis_button_linkedin"></a>
+<a class="addthis_button_print"></a>
+</div>
+<div id="twitter-follow" style="margin-left:150px"> 
+<a href="https://twitter.com/NetGestalt" class="twitter-follow-button" data-show-count="false">Follow @NetGestalt</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+</div>
+</div>
+<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=xa-4f8af12a4b760898"></script>
+<!-- AddThis Button END -->
+<div id="footer">Copyright &copy; <script>document.write(new Date().getFullYear())</script><a href="http://bioinfo.vanderbilt.edu/zhanglab" target="_blank"> Zhang lab</a> @ Vanderbilt University. All rights reserved.</div>
+</div>
+<!--
+<div id="portals-dropdown" class="dropdown dropdown-tip">
+    <ul class="dropdown-menu">
+        <li><a href="main/main.html">main</a></li>
+        <li><a href="ayers/main.html">ayers</a></li>
+        <li><a href="cptac/main.html">cptac</a></li>
+        <li><a href="tcga/main.html">tcga</a></li>
+    </ul>
+</div>
+-->
+
+</body>
+
+</html>
+

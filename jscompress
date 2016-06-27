@@ -1,0 +1,34 @@
+#!/bin/bash
+
+# minify and combine js files
+
+make -f Makefile.jscompress
+
+all_out_1=netgestalt_1.min.js
+all_in_1=all_js_files_1
+all_out_2=netgestalt_2.min.js
+all_in_2=all_js_files_2
+
+if [ -f $all_out_1 ];
+then 
+  rm $all_out_1  
+fi
+
+if [ ! -f $all_out_1 ];
+then 
+  for i in `cat $all_in_1`
+    do cat $i >> $all_out_1
+  done
+fi
+
+if [ -f $all_out_2 ];
+then 
+  rm $all_out_2  
+fi
+
+if [ ! -f $all_out_2 ];
+then 
+  for i in `cat $all_in_2`
+    do cat $i >> $all_out_2
+  done
+fi

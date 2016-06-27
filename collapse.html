@@ -1,0 +1,30 @@
+<!doctype html>
+<html><head>
+<title>NetGestalt - Gene Network Browser</title>
+<link rel="stylesheet" type="text/css" href="css/netgestalt.css">
+<link rel="stylesheet" type="text/css" href="css/collapsedpage.css">
+<link rel="stylesheet" type="text/css" href="css/jquery.qtip.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript" src="js/balloon/yahoo-dom-event.js"></script>
+<script type="text/javascript" src="js/balloon/balloon.config.js"></script>
+<script type="text/javascript" src="js/balloon/balloon.js"></script>
+<script type="text/javascript" src="js/Util.js"></script>
+<script type="text/javascript" src="js/Collapse.js"></script>
+<script type="text/javascript" src="js/jquery.qtip.min.js"></script>
+<script type="text/javascript">
+ $(function(){
+    /*
+    if(window.opener.collapsedParam.reloaded==false){
+       console.log("reloading");
+       window.location.reload();
+       window.opener.collapsedParam.reloaded=true;
+    }
+    */
+    var cp=new CollapsedPage();
+    cp.rendering();
+ });
+</script>
+</head>
+<body>
+</body>
+</html>

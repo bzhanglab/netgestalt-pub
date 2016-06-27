@@ -1,0 +1,246 @@
+/*
+* QueryBox 1.0
+* @author marcos weskamp
+* @published: Nov 20, 2008.
+* Copyright 2008, Marcos Weskamp marcos@marumushi.com
+* This work is licensed under a Creative Commons Attribution 3.0 Unported License. 
+* http://creativecommons.org/licenses/by/3.0/
+*/
+.QueryBox { margin:10px; font: 11px/16px Georgia, serif;}
+.QueryBox form input { padding:5px; background-color:#FEFEFE; border:1px solid #666; color: #333; }
+.QueryBox .Input { float:left;margin:0px;padding:1px 5px;}
+.QueryBox .Last { float:right; display:none; }
+.QueryBox .QueryInput{ padding:4px 0px; display:block; overflow:show; display:block; border:1px solid #BBBBBB; }
+.QueryBox .SearchIcon{ background:transparent url(../images/querybox/search.gif) no-repeat scroll 0 0; display:none; }
+.QueryBox .Button{ padding:4px; text-transform:uppercase;}
+.QueryBox .TextInput{ padding-right:2px; width:240px; background:#FFF url(../images/querybox/search-icon-light.gif) no-repeat scroll 210px 6px; }
+.QueryBox .ResultBox div, 
+.QueryBox .ResultBox h1,
+.QueryBox .ResultBox h2,
+.QueryBox .ResultBox p { padding:0px; margin:0px; overflow:hidden; text-transform:lowercase; font-weight:normal; }
+.QueryBox .ResultBox h1{ border-bottom:1px solid #BBBBBB; font-size:16px; font-style:italic; margin:8px 10px 5px 10px; }
+.QueryBox .ResultBox h2 { font-size:14px; color:#444; margin-bottom:2px; }
+.QueryBox .ResultBox p { margin:0px 0px 0px 4px; color:#888; }
+.QueryBox .ResultBox b { font-weight:normal; }
+.QueryBox .ResultBox a { text-decoration: none; color: #BBB; border: none; }
+.QueryBox .ResultBox a:visited, 
+.QueryBox .ResultBox a:active, 
+.QueryBox .ResultBox a:focus{ }
+.QueryBox .ResultBox .ListItem { padding:4px 4px 4px 14px; }
+.QueryBox .QueryInput,
+.QueryBox .ResultBox{ background-color:#F0F0F0; background-position:left bottom; background-repeat:no-repeat; width:240px; }
+.QueryBox .ResultBox{
+	border-color:#000000 #BBBBBB #BBBBBB;
+	border-style:none solid solid;
+	border-width:0 1px 1px;
+	color:#333333;
+	font-size:14px;
+	margin:-1px 0 0 0px;
+	padding:0px;
+	position:absolute;
+}
+.QueryBox .ResultBox .ListItem:hover,
+.QueryBox .ResultBox .Selected { background-color:#FFF; }
+.QueryBox .ResultBox .NoResults { padding:5px;}
+.QueryBox .ResultBox .NoResults p { color:#666;}
+.QueryBox .ResultBox .NoResults b { color:#000; font-style:italic; }
+
+.QueryBox .ResultsPage .Result { margin:1px 0px; padding:4px 4px 10px;border-bottom:1px solid #F0F0F0;width:700px;}
+.QueryBox .ResultsPage .Result h3 { color:#000; font-size:16px; font-weight:normal;padding:0px;margin:5px 0px;}
+.QueryBox .ResultsPage .Result p { color:#444; font-size:14px;margin:0px;padding:0px;}
+
+
+.QueryBoxDark { margin-top:10px; margin-left:5px; font:11px Arial, sans-serif;}
+.QueryBoxDark form input { padding:5px; background-color:#FFF; border:0px solid red; color: #333; margin:-3px 0px -3px -6px; }
+.QueryBoxDark .TextInput  { font:12px Arial, sans-serif; color:#666; }
+.QueryBoxDark .Last { float:right; display:none;}
+.QueryBoxDark .QueryInput{ padding:4px 5px 4px 7px; display:block; overflow:hidden; clear:both; display:block; border:0px solid #eaeaea; }
+.QueryBoxDark .SearchIcon{ background:transparent url(../images/querybox/search.gif) no-repeat scroll 0 0; }
+.QueryBoxDark .Button{ padding:4px; text-transform:uppercase; display:none; }
+.QueryBoxDark .TextInput{ width:100%; background:#FFF url(../images/querybox/search-icon-light.gif) no-repeat right 10px center;}
+.QueryBoxDark .GeneTextInput{ padding:5px; background-color:#FFF; border:1px solid #666; color: #333; margin:-3px 0px -3px -6px; width:100%; background:#FFF no-repeat scroll 218px 6px;}
+.QueryBoxDark .ResultBox div, 
+.QueryBoxDark .ResultBox h1,
+.QueryBoxDark .ResultBox h2,
+/*.QueryBoxDark .ResultBox p { padding:0px; margin:0px; overflow:hidden; text-transform:lowercase; font-weight:normal; } */
+.QueryBoxDark .ResultBox p { padding:0px; margin:0px; overflow:visible; font-weight:normal; }
+.QueryBoxDark .ResultBox h2 .results_icon {float:left; padding-right:5px}
+.track_delete {float:right; padding-right:5px; padding-bottom:5px; margin-bottom:5px}
+/* .QueryBoxDark .ResultBox h2:after {content:"+";color:green;font-weight:bold; font-size:22px;font-weight:bold;margin-left:4px;} */
+/*.QueryBoxDark .ResultBox h2:after {content:url(../images/plus.png);font-weight:bold; font-size:22px;font-weight:bold;margin-left:4px}
+*/
+.QueryBoxDark .ResultBox h1{ font-size:0.9em; background-color:#858180; padding:8px 10px 5px 10px; color:#fff;}
+/*
+.QueryBoxDark .ResultBox h2 { font-size:1.1em; color:#F0F0F0; margin-bottom:2px; }
+*/
+.QueryBoxDark .ResultBox h2 {padding-top:0px; font-size:1.1em; color:#000; margin-bottom:2px; }
+/*
+.QueryBoxDark .ResultBox p { font-size:0.95em; color:#CCC; margin:0px 0px 0px 12px; }
+*/
+.QueryBoxDark .ResultBox p { font-size:0.95em; color:#000; margin:0px 0px 0px 12px; }
+.QueryBoxDark .ResultBox b { font-weight:bold; color:red; }
+.QueryBoxDark .ResultBox a { text-decoration: none; color: #BBB; border: none; }
+.QueryBoxDark .ResultBox a:visited, 
+.QueryBoxDark .ResultBox a:active, 
+.QueryBoxDark .ResultBox a:focus{}
+.QueryBoxDark .ResultBox .ListItem { padding:8px 4px 8px 8px; border-bottom:1px solid #858180; }
+.QueryBoxDark .QueryInput,
+/* .QueryBoxDark .ResultBox{ background-color:#333; background-position:left bottom; background-repeat:no-repeat; width:240px; }
+*/
+.QueryBoxDark .ResultBox{ background-color:white; background-position:left bottom; background-repeat:no-repeat; width:470px; overflow: scroll}
+.QueryBoxDark .QueryInput{ width:460px; background-color:#888;}
+.QueryBoxDark .ResultBox{ border:1px solid #858180; color:#ccc; font-size:1em; margin:-1px 0 0 0px; padding:0px; position:absolute; }
+/*
+.QueryBoxDark .ResultBox .ListItem:hover,
+.QueryBoxDark .ResultBox .Selected { background-color:#808080; }
+*/
+/* 
+.QueryBoxDark .ResultBox .Selected { background-color:#222; }
+*/
+/*
+.QueryBoxDark .ResultBox .ListItem:hover,
+.QueryBoxDark .ResultBox .ListItem:hover h1,
+.QueryBoxDark .ResultBox .ListItem:hover h2,
+.QueryBoxDark .ResultBox .ListItem:hover p,
+.QueryBoxDark .ResultBox .Selected  h1,
+.QueryBoxDark .ResultBox .Selected  h2,
+.QueryBoxDark .ResultBox .Selected  p { color:#FFF; }
+*/
+.QueryBoxDark .ResultBox .NoResults { padding:5px; }
+.QueryBoxDark .ResultBox .NoResults p { color:#000;}
+.QueryBoxDark .ResultBox .NoResults b { color:#000; font-style:italic; }
+/*
+.QueryBoxDark .ResultBox .NoResults p { color:#CCC; }
+.QueryBoxDark .ResultBox .NoResults b { color:#FFF; font-style:italic; }
+*/
+
+.TextAreaInput { 
+      padding:5px 0px 5px 10px; 
+			background-color:#FFF; 
+			color: #333; 
+			margin:10px 0px 0px 0px;
+      left:5px;
+      width:360px;
+      border-width: 1px;
+      border-style: solid;
+      border-color:#888;
+			color:#666;
+      overflow-y: scroll; 
+      background:#FFF no-repeat scroll 218px 6px; 
+      line-height:13px;
+      vertical-align:top;
+      height: 50px;
+}
+
+#gene_open,#gene_valid,#gene_invalid{
+    font: 12px Arial, sans-serif;
+}
+
+
+textarea {
+  overflow: hidden;
+  resize: none;
+  z-index:1;
+}
+
+.valid_gene{
+  background-color:red;
+}
+
+#geneinputbox {
+ z-index: 2;
+ position:relative;
+ height:200px;
+ display: none;
+ font: 12px Arial, sans-serif;
+}
+
+#geneinputbox span{
+ margin-top:5px;
+ display:inline-block;
+}
+
+#searchtrackbox {
+ z-index: 10;
+ position:relative;
+}
+
+#geneinputbox #geneinput_footnote{
+    height: 1em;
+    left: 5px;
+    bottom:15px;
+		position:absolute;
+    width: 380px;
+		display: block;
+}
+
+#loadingicon {
+   position: absolute;
+   height:16px;
+   width:16px;
+   top:0.25em;
+   left:0.25em;
+}
+
+#geneinputbox #geneinput_footnote span {
+    background: none repeat scroll 0 0 #EBF5DF;
+    font: 12px Arial, sans-serif;
+    display: block;
+    height: 1.0em;
+    left: 0px;
+    padding: 0 0;
+    position: absolute;
+    text-align: left;
+    vertical-align: bottom;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+#geneinput_footnote{
+  font-size: 1em;
+}
+
+/*#gene_count,#create_new_track_button{*/
+.ng_button{
+    font: 11px Arial, sans-serif;
+    background: none repeat scroll 0 0 #D3BCA5;
+    border: 1px solid #666666;
+    border-radius: 4px 4px 4px 4px;
+    color: #000;
+    cursor: default;
+    font-weight: bold;
+    /* margin: 0.25em; */
+    position: absolute;
+    top: 0.25em;
+    /*padding: 0.25em 0.5em;*/
+    padding: 2px 5px;
+    z-index:1;
+    /* z-index: 99; */
+}
+
+.ng_button_disabled{
+   background: none repeat scroll 0 0 #F0F0F0;
+   color: #707070;
+    border: 1px solid #707070;
+}
+
+.enter_gene_button{
+    font: 11px Arial, sans-serif;
+    background: none repeat scroll 0 0 #D3BCA5;
+    border: 1px solid #666666;
+    border-radius: 4px 4px 4px 4px;
+    color: #000;
+    cursor: default;
+    font-weight: bold;
+    top: 0.25em;
+    padding: 2px 5px;
+    z-index:1;
+		float: right;
+		margin-right:2px;
+}
+
+
+#gene_open{
+  background-color: transparent;
+}
